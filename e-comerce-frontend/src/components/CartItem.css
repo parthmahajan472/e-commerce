@@ -1,18 +1,27 @@
 .cartitem {
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
-  gap: 8px;
-  background: #fff;
-  border-radius: 2px;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  gap: 12px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   place-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cartitem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cartItem__name {
   text-decoration: none;
-  color: #171717;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .cartItem__name:hover {
@@ -20,33 +29,48 @@
 }
 
 .cartItem__select {
-  padding: 10px 17px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cartItem__select:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
 }
 
 .cartItem__deleteBtn {
-  padding: 10px 17px;
+  padding: 12px 20px;
   color: red;
   background: #f4f4f4;
-  border: 1px solid #171717;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease;
 }
 
-.cartItem__deleteBtn:hover,
-.carItem__deleteBtn:active,
-.carItem__deleteBtn:focus {
+.cartItem__deleteBtn:hover {
   background: #171717;
+  color: #fff;
   transform: scale(1.2);
 }
 
 @media (max-width: 700px) {
+  .cartitem {
+    padding: 1rem;
+    gap: 8px;
+  }
+
   .cartItem__name {
     font-size: 0.8rem;
   }
 
   .cartItem__select,
   .cartItem__deleteBtn {
-    padding: 8px 13px;
+    padding: 8px 12px;
   }
 
   .cartitem__price {
@@ -54,17 +78,23 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
+  .cartitem {
+    padding: 0.8rem;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    gap: 6px;
+  }
+
   .cartItem__name {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 
   .cartItem__select,
   .cartItem__deleteBtn {
-    padding: 5px 8px;
+    padding: 6px 10px;
   }
 
   .cartitem__price {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 }
