@@ -26,42 +26,28 @@ const Navbar = ({click}) => {
   }
 
   return (
-    <nav className="navbar">
-      <div className="navbar__logo">
-        <h2>JSOM-E-COMERCE</h2>
-      </div>
+ <>
+      <nav className="navbar">
 
-      <ul className="navbar__links">
-        <li>
-          <Link to="/cart" className="cart__link">
-            <i className="fas fa-shopping-cart"></i>
+          <ul className="mainlist">
+            <li className="sublist"><Link to="/" className="link">Home</Link></li>
+            <li className="sublist"><Link to="/cart" className="link"><i className="fas fa-shopping-cart"></i>
             <span>
               Cart <span className="cartlogo__badge">{getCartCount()}</span>
-            </span>
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/">Shop</Link>
-        </li>
-
-        {!user.userInfo.isLogin ? (
-          <li>
-            <Link to="/signin">Login</Link>
-          </li>
-        ) : (
-          <li>
-            <p onClick={_handleLogout}>Logout</p>
-          </li>
-        )}
-      </ul>
-
-      <div className="hamburger__menu" onClick={click}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </nav>
+            </span></Link></li>
+            <li className="sublist"><Link to="/" className="link">Shop</Link></li>
+            {!user.userInfo.isLogin ? (
+              <li className="sublist">
+                <Link to="/signin" className="link">Login</Link>
+              </li>
+            ) : (
+              <li className="sublist">
+                <p onClick={_handleLogout}>Logout</p>
+              </li>
+            )}
+          </ul>
+        </nav>
+    </>
   )
 }
 

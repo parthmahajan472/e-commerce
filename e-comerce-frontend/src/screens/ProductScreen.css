@@ -1,17 +1,24 @@
 .productscreen {
   max-width: 1300px;
-  margin: 1rem auto;
+  margin: 2rem auto;
   display: flex;
+  gap: 1.5rem; /* Added gap between the left and right sections for spacing */
 }
 
 .productscreen__left {
   display: flex;
   flex: 0.8;
+  background-color: #f9f9f9; /* Soft background for better visual separation */
+  padding: 1rem;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .left__image {
   margin: 1rem;
   flex: 0.6;
+  border-radius: 10px; /* Added border-radius for smoother image corners */
+  overflow: hidden; /* Ensures the image doesn’t exceed its boundaries */
 }
 
 .left__info {
@@ -19,18 +26,23 @@
   flex: 0.4;
   background: #fff;
   height: fit-content;
-  font-size: 0.9rem;
+  padding: 1rem;
+  font-size: 1rem; /* Increased font size for readability */
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* Matching shadow effect */
 }
 
 .left__name {
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: 1.5rem; /* Increased size for product name */
+  color: #264653; /* Consistent with the theme color */
+  margin-bottom: 0.8rem; /* Added margin for spacing */
 }
 
 .left__info > p,
 .right__info > p {
   padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .left__info > p:last-child,
@@ -40,51 +52,63 @@
 
 .productscreen__right {
   flex: 0.2;
+  padding: 1rem;
 }
 
 .right__info {
-  width: 250px;
-  margin: 1rem;
+  width: 100%;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px;
+  margin-top: 1rem;
 }
 
 .right__info p {
   padding: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem; /* Slightly increased font size for readability */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem; /* Added gap for more spacing between elements */
 }
 
 .right__info p > button {
   grid-column: 1/-1;
   width: 100%;
-  padding: 10px 16px;
-  background: #171717;
-  color: #f4f4f4;
-  border: 1px solid #171717;
+  padding: 12px 20px;
+  background: #264653; /* Updated background to match the theme */
+  color: #fff;
+  border: 1px solid #264653;
   cursor: pointer;
   border-radius: 5px;
+  transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+.right__info p > button:hover {
+  background: #457b9d; /* Hover effect with a softer color */
 }
 
 .right__info select {
   padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 @media (max-width: 960px) {
   .productscreen {
     flex-direction: column;
+    gap: 1rem;
   }
 
   .productscreen__left {
     flex-direction: column;
     flex: 1;
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
 
-  .left__image {
-    flex: 1;
-  }
-
+  .left__image,
   .left__info {
     flex: 1;
   }
@@ -92,6 +116,7 @@
   .productscreen__right {
     flex: 1;
     padding: 1rem;
+    margin-bottom: 1rem;
   }
 
   .right__info {

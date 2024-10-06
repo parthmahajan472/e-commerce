@@ -1,34 +1,52 @@
 .homescreen {
   max-width: 1300px;
-  margin: 1rem auto;
+  margin: 2rem auto;
+  padding: 0 1rem; /* Add padding for a more contained look */
 }
 
 .homescreen__title {
-  font-size: 1.5rem;
-  color: #171717;
-  margin-bottom: 1rem;
-  margin-left: 8px;
+  font-size: 1.8rem; /* Increase font size for a more prominent title */
+  color: #264653; /* Use a theme-consistent color */
+  margin-bottom: 1.5rem;
+  margin-left: 10px;
+  font-weight: 600; /* Bold title for emphasis */
 }
 
 .homescreen__products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem; /* Add consistent spacing between product cards */
+  padding: 1rem 0; /* Add top and bottom padding */
 }
 
 @media (max-width: 1232px) {
   .homescreen__products {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr); /* Maintain consistent column sizing */
+    gap: 1.2rem; /* Adjust gap for smaller screens */
   }
 }
 
 @media (max-width: 950px) {
   .homescreen__products {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
 @media (max-width: 630px) {
   .homescreen__products {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Full width for mobile */
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .homescreen__title {
+    font-size: 1.4rem; /* Reduce title size for smaller screens */
+    margin-left: 5px;
+  }
+
+  .homescreen__products {
+    gap: 0.8rem; /* Adjust gap for very small screens */
   }
 }
